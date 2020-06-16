@@ -59,7 +59,7 @@ const prodConfig = () => ({
             loader: 'css-loader',
             query: {
               modules: true,
-              localIdentName: '[name]_[local]_[hash:base64:5]',
+              localIdentName: '[name]_[local]_[hash:base64:5]',                                       // it configures name of the class for tag/component e.g App_title_2f21O which is built from name of component + name of selector + hash for class to make it unique
             },
           },
           'sass-loader',
