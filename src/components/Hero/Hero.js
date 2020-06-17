@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Hero.scss';
 
-            // props argument declaration
+            // props argument declaration     // in props we can declare string, numbers, arrays, objects, functions
 const Hero = props => (
   <header className={styles.component}>
     <h2 className={styles.title}>

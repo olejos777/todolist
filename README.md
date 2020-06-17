@@ -3,6 +3,7 @@
 # npm install - install all packages configured in package.json
 # npm start - inits "webpack-dev-server --mode development --open --hot", (developer's version of the application)
 # npm run build - inits "webpack --mode production" (production version of the application (stable)) - all the styles will be created in /dist/styles_bundle_main.css.
+# npm install --save prop-types - package that allows to define type of props in each component (class and function component)
 
 
 styles_bundle_main.css - all styles of the application
@@ -34,3 +35,6 @@ Function component - simplier components that doesn't contain class e.g:
             );
 
         ##  export default MyComponent;
+
+
+// children - if props are not defined(if they are not named) we can use prop "children" which will refer to children element of this class instance
