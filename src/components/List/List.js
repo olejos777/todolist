@@ -1,8 +1,15 @@
 import React from 'react'
 import styles from './List.scss';
-import Hero from '../Hero/Hero.js'
+import Hero from '../Hero/Hero.js';
+import PropTypes from 'prop-types';
 
 class List extends React.Component {
+
+  static propType = {                             // static means that we are defining static property of this class and the this object will not be available for all instances. It will be defined as "List.propTypes" (class property and not instance property)
+    title: PropTypes.node,
+    children: PropTypes.node,
+  };
+
   render() {
     return (
       <section className={styles.component}>
@@ -11,8 +18,8 @@ class List extends React.Component {
           {this.props.children}                   {/* if props are not defined(if they are not named) we can use prop "children" which will refer to children element of this class instance */}
         </div>
       </section>
-    )
-  }
+    );
+  };
 }
 
 export default List;

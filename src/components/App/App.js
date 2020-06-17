@@ -12,8 +12,8 @@ class App extends React.Component {
           <p>I'm going to do nothing and live like a king</p>
         </List>
       </main>
-    )
-  }
+    );
+  };
 }
 
 export default App;
