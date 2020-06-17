@@ -3,13 +3,15 @@ import styles from './List.scss';
 import Hero from '../Hero/Hero.js';
 import PropTypes from 'prop-types';
 import Column from '../Column/Column.js';
+import { settings } from '../../data/dataStore';
 
 class List extends React.Component {
 
   static propTypes = {                             // static means that we are defining static property of this class and the this object will not be available for all instances. It will be defined as "List.propTypes" (class property and not instance property)
     title: PropTypes.node,
-    children: PropTypes.node,
     imageSource: PropTypes.string,
+    description: PropTypes.node,
+    columns: PropTypes.array,
   };
 
   static defaultProps = {
