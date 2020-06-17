@@ -2,6 +2,7 @@ import React from 'react'
 import styles from './List.scss';
 import Hero from '../Hero/Hero.js';
 import PropTypes from 'prop-types';
+import Column from '../Column/Column.js';
 
 class List extends React.Component {
 
@@ -25,7 +26,12 @@ class List extends React.Component {
 
         <div className={styles.description}>
           {this.props.children}                   {/* if props are not defined(if they are not named) we can use prop "children" which will refer to children element of this class instance */}
+        </div>
 
+        <div className={styles.columns}>
+          <Column columnTitle='Column 1'/>
+          <Column columnTitle='Column 2'/>
+          <Column columnTitle='Column 3'/>
         </div>
       </section>
     );
