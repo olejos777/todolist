@@ -8,7 +8,10 @@ class App extends React.Component {
       <main className={styles.component}>
         <h1 className={styles.title}>My first React app</h1>
         <h2 className={styles.subtitle}>Hello world!</h2>
-        <List title={['Things to do', <sup key='1'> soon!</sup>]}>                   {/* to create a mix of HTML string + styled HTML you just need to close the code into brackets "{}" */} {/*every object in array has to posses key property which should be unique in particular array */}
+        <List                                                                                                                       /* to create a mix of HTML string + styled HTML you just need to close the code into brackets "{}"     every object in array has to posses key property which should be unique in particular array */
+          title={['Things to do', <sup key='1'> soon!</sup>]}
+          image={'http://uploads.kodilla.com/bootcamp/fer/11.react/space.png'}
+        >
           <p>I'm going to do nothing and live like a king</p>
         </List>
       </main>

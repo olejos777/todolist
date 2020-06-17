@@ -5,17 +5,27 @@ import PropTypes from 'prop-types';
 
 class List extends React.Component {
 
-  static propType = {                             // static means that we are defining static property of this class and the this object will not be available for all instances. It will be defined as "List.propTypes" (class property and not instance property)
+  static propTypes = {                             // static means that we are defining static property of this class and the this object will not be available for all instances. It will be defined as "List.propTypes" (class property and not instance property)
     title: PropTypes.node,
     children: PropTypes.node,
+    imageSource: PropTypes.string,
   };
+
+  static defaultProps = {
+    children: <p> I can do all the things!!!</p> // in case content of object was not defined there can be defined default content which will be displayed
+  }
 
   render() {
     return (
       <section className={styles.component}>
-        <Hero titleText={this.props.title} />     {/* titleText - prop name (we choose the name) which is which is provided to component Hero. // this.props - refers to this class instance (App in this case). title - it's name of the prop (we choose the name for the props but has to be the same like in class from which it's imported) */}
+        <Hero
+          titleText={this.props.title}
+          imageSource={this.props.image}
+        />                                        {/* titleText - prop name (we choose the name) which is which is provided to component Hero. // this.props - refers to this class instance (App in this case). title - it's name of the prop (we choose the name for the props but has to be the same like in class from which it's imported) */}
+
         <div className={styles.description}>
           {this.props.children}                   {/* if props are not defined(if they are not named) we can use prop "children" which will refer to children element of this class instance */}
+
         </div>
       </section>
     );
