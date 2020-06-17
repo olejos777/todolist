@@ -15,7 +15,7 @@ class List extends React.Component {
   };
 
   static defaultProps = {
-    children: <p> I can do all the things!!!</p> // in case content of object was not defined there can be defined default content which will be displayed
+    description: settings.defaultListDescription, // in case content of object was not defined there can be defined default content which will be displayed
   }
 
   render() {
