@@ -4,6 +4,7 @@
 # npm start - inits "webpack-dev-server --mode development --open --hot", (developer's version of the application)
 # npm run build - inits "webpack --mode production" (production version of the application (stable)) - all the styles will be created in /dist/styles_bundle_main.css.
 # npm install --save prop-types - package that allows to define type of props in each component (class and function component)
+# npm install --save react-html-parser - allows to display text instead of HTML code in JSX objects
 
 
 styles_bundle_main.css - all styles of the application

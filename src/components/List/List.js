@@ -4,6 +4,7 @@ import Hero from '../Hero/Hero.js';
 import PropTypes from 'prop-types';
 import Column from '../Column/Column.js';
 import { settings } from '../../data/dataStore';
+import ReactHtmlParser from 'react-html-parser';
 
 class List extends React.Component {
 
@@ -27,7 +28,7 @@ class List extends React.Component {
         />                                        {/* titleText - prop name (we choose the name) which is which is provided to component Hero. // this.props - refers to this class instance (App in this case). title - it's name of the prop (we choose the name for the props but has to be the same like in class from which it's imported) */}
 
         <div className={styles.description}>
-          {this.props.description}                   {/* if props are not defined(if they are not named) we can use prop "children" which will refer to children element of this class instance */}
+          {ReactHtmlParser(this.props.description)}                   {/* if props are not defined(if they are not named) we can use prop "children" which will refer to children element of this class instance */}
         </div>
 
         <div className={styles.columns}>
