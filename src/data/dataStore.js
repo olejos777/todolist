@@ -22,7 +22,7 @@ export const listData = {
   columns: [
     {
       key: 0,
-      columnTitle: 'Books',
+      title: 'Books',
       icon: 'book',
       cards: [
         {
@@ -37,7 +37,7 @@ export const listData = {
     },
     {
       key: 1,
-      columnTitle: 'Movies',
+      title: 'Movies',
       icon: 'film',
       cards: [
         {
@@ -52,7 +52,7 @@ export const listData = {
     },
     {
       key: 2,
-      columnTitle: 'Games',
+      title: 'Games',
       icon: 'gamepad',
       cards: [
         {
