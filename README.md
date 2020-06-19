@@ -9,6 +9,7 @@
 7. npm install -D eslint-plugin-react - React specific linting rules for ESLint
 8. npm install -D babel-eslint - babel-eslint allows you to lint ALL valid Babel code with the fantastic ESLint.
 in .eslintrc.json (in main folder of project) add:
+
         {
         "env": {
             "es6": true,
@@ -62,6 +63,7 @@ in .eslintrc.json (in main folder of project) add:
         }
 9. npm install -D lint-staged - Run linters against staged git files and don't let 💩 slip into your code base!
 in package.json under scripts:
+
         "husky": {
         "hooks": {
             "pre-commit": "lint-staged"
