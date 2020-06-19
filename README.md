@@ -94,6 +94,9 @@ in `package.json` under `scripts`:
         },
 ```
 10. [React developer tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi) instalation
+11. `npm install -S redux@4.0.1 react-redux@7.0.1` - package to run Redux
+12. `npm install -D redux-devtools-extension@2.13.8` - package that allows to view `store` content with DevTools
+13. [Redux DevTools to see `store` content](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd)
 
 ***
 

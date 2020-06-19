@@ -54,11 +54,9 @@ class List extends React.Component {
         </div>
 
         <div className={styles.columns}>
-          {/* map() method returns converted elements of array this.state.columns - it creates an instance of Column class by using JSX (it assigns proper props from initial array (this.state.columns) to the key and columnProps arguments*/}
-          {this.state.columns.map(({ key, ...columnProps }) => (                  // the "map()" method returns an array with changed content
-            <Column key={key} {...columnProps} />                                 // it's mandatory to declare the "key" in JSX for objects/arrays
+          {this.state.columns.map(({ key, ...columnProps }) => (
+            <Column key={key} {...columnProps} />
           ))}
-          }
         </div>
 
         <div className={styles.creator}>
