@@ -84,3 +84,42 @@ Below is correct syntax:
         // return new state
         return newState;
       });
+
+# map() method:
+
+Below is correct syntax:
+
+        {this.state.columns.map(({ key, ...columnProps }) => (                  // the "map()" method returns an array with changed content
+            <Column key={key} {...columnProps} />                                 // it's mandatory to declare the "key" in JSX for objects/arrays
+          ))}
+
+Dont
+
+        function(singleColumn){
+            const key = singleColumn.key;
+
+            const columnProps = {};
+
+            for(let propName in singleColumn){
+                if(propName != 'key'){
+                    columnProps[propName] = singleColumn[propName];
+                }
+            }
+
+            return <Column key={key} {...columnProps} />
+            }
+
+
+            or:
+
+            function(singleColumn){
+                key, ...columnProps} = singleColumn;
+
+                return <Column key={key} {...columnProps} />
+            }
+
+Ten zapis oszczędził nam sporo miejsca! Ale skoro tylko raz używamy argumentu singleColumn, to możemy w ogóle go nie nazywać, tylko od razu w deklaracji argumentów użyć wyrażenia {key, ...columnProps}.
+
+        function({key, ...columnProps}){
+            return <Column key={key} {...columnProps} />
+        }
