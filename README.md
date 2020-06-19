@@ -1,13 +1,13 @@
 # todolist
 
-1. npm install - install all packages configured in package.json
-2. npm start - inits "webpack-dev-server --mode development --open --hot", (developer's version of the application)
-3. npm run build - inits "webpack --mode production" (production version of the application (stable)) - all the styles will be created in /dist/styles_bundle_main.css.
-4. npm install --save prop-types - package that allows to define type of props in each component (class and function component)
-5. npm install --save react-html-parser - allows to display text instead of HTML code in JSX objects
-6. npm install -D eslint - ESLint is a tool for identifying and reporting on patterns found in ECMAScript/JavaScript code
-7. npm install -D eslint-plugin-react - React specific linting rules for ESLint
-8. npm install -D babel-eslint - babel-eslint allows you to lint ALL valid Babel code with the fantastic ESLint.
+1. `npm install` - install all packages configured in package.json
+2. `npm start` - inits "webpack-dev-server --mode development --open --hot", (developer's version of the application)
+3. `npm run build - inits "webpack --mode production"` (production version of the application (stable)) - all the styles will be created in `/dist/styles_bundle_main.css`.
+4. `npm install --save prop-types` - package that allows to define type of props in each component (class and function component)
+5. `npm install --save react-html-parser` - allows to display text instead of HTML code in JSX objects
+6. `npm install -D eslint` - ESLint is a tool for identifying and reporting on patterns found in ECMAScript/JavaScript code
+7. `npm install -D eslint-plugin-react` - React specific linting rules for ESLint
+8. `npm install -D babel-eslint` - babel-eslint allows you to lint ALL valid Babel code with the fantastic ESLint.
 + in .eslintrc.json (in main folder of project) add:
 ```json
         {
@@ -62,8 +62,8 @@
         }
         }
 ```
-9. npm install -D lint-staged - Run linters against staged git files and don't let 💩 slip into your code base!
-in package.json under scripts:
+9. `npm install -D lint-staged` - Run linters against staged git files and don't let 💩 slip into your code base!
+in `package.json` under `scripts`:
 ```json
         "husky": {
         "hooks": {
@@ -75,14 +75,14 @@ in package.json under scripts:
         },
 ```
 
-styles_bundle_main.css - all styles of the application
-dist/scripts_bundle.js - is a file that joints all JS code of our application which then is converted(translated) by Babel so that it's readable for web browser
+`styles_bundle_main.css` - all styles of the application
+`dist/scripts_bundle.js` - is a file that joints all JS code of our application which then is converted(translated) by Babel so that it's readable for web browser
 
-<.bablerc> - is a configuration file
+`.bablerc` - is a configuration file
 
-settings.scss, - contains various or mixins (it musn't contain styles - it can only contain Sass syntax)
-normalize.css, - unifies styles for different web browsers
-global.scss, -contains global styles e.g for body or fonts
+`settings.scss`, - contains various or mixins (it musn't contain styles - it can only contain Sass syntax)
+`normalize.css`, - unifies styles for different web browsers
+`global.scss`, -contains global styles e.g for body or fonts
 
 **Props_** - properties of element e.g for hour_picker:
     $ startHour: 12:00;
@@ -106,7 +106,7 @@ const MyComponent = () => (
 export default MyComponent;
 ```
 
-// children - if props are not defined(if they are not named) we can use prop "children" which will refer to children element of this class instance
+`children` - if props are not defined(if they are not named) we can use prop "children" which will refer to children element of this class instance
 
 ## addColumn function:
 
@@ -190,7 +190,7 @@ function(singleColumn){
 }
 ```
 
-Ten zapis oszczędził nam sporo miejsca! Ale skoro tylko raz używamy argumentu singleColumn, to możemy w ogóle go nie nazywać, tylko od razu w deklaracji argumentów użyć wyrażenia {key, ...columnProps}.
+Ten zapis oszczędził nam sporo miejsca! Ale skoro tylko raz używamy argumentu singleColumn, to możemy w ogóle go nie nazywać, tylko od razu w deklaracji argumentów użyć wyrażenia `{key, ...columnProps}`.
 ```javascript
 function({key, ...columnProps}){
     return <Column key={key} {...columnProps} />
