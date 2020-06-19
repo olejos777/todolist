@@ -1,5 +1,21 @@
 # todolist
 
+## React
+
+## Redux
+`Redux` - is a library that helps managing the application **state**. It implements store which is an object that stores application **state**. It contains also package of methods that allows the `store` handling
+>Zasada działania Reduksa jest w miarę prosta: komponent zgłasza chęć zmiany stanu aplikacji, magazyn decyduje, czy wprowadzić tę zmianę, a jeśli ją wprowadzi – informuje o tym wszystkie komponenty, korzystające ze zmienionych danych.
+
++ Each component can be modified so that it can read application **state** from the `store`. Thanks to that `Column` can display `Card`'s which contains (which are assigned to the `Column`). It will be reendered always when data which are read by this component change.
++ If component wats to change application **state** (e.g add new `Card`) it create and sends an **Action** to the store. An **Action** is just a communicate that says >"I want to implement change in application state, here are the change details".
++ Then the store will take an action and will try to change application state (if we provided a function to handle particular **Action** and the data carried by **Action* are correct)
++ If the `store` changed an application state then all components that uses changed data will be reendered. Thanks to this for example if new `Card` is added it will be displayed in proper `Column`.
+>W ten sposób zatoczyliśmy koło, zaczynając i kończąc na komponencie. To trochę tak, jakbyśmy chcieli zawrócić na rondzie – musimy >przejechać dookoła całego ronda. Bardzo ważne jest to, że po tym rondzie jeździmy tylko w jednym kierunku! Komponent sam nie może >bezpośrednio zmienić stanu aplikacji, ani wyświetlić karty, która nie została jeszcze dodana do magazynu.
+
+>Może się to pozornie wydawać ograniczeniem, ale w rzeczywistości pozwoli to na zachowanie porządku i uniknięcie poważnych problemów.
+
+>Oczywiście, to tylko bardzo ogólny opis działania Reduksa – pozwoli nam szybko zacząć używać Reduksa i w praktyce zrozumieć jego >działanie. Dopiero wtedy poruszymy szczegóły każdego z opisanych powyżej etapów jego działania.
+
 ****
 
 ## Packages instalation
