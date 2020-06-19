@@ -77,6 +77,7 @@ in `package.json` under `scripts`:
         "src/**/*.js": "eslint"
         },
 ```
+10. [React developer tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi)
 __
 ## Files used:
 `styles_bundle_main.css` - all styles of the application
@@ -116,7 +117,7 @@ export default MyComponent;
 
 ___
 ## Functions definition and explaination
-### addColumn function:
+### `addColumn function`:
 
 Below is correct syntax:
 
@@ -163,12 +164,19 @@ addColumn(title) {
       });
 ```
 
-### map() method:
+### `ReactHtmlParser()`:
+ ```javascript
+<div className={styles.description}>
+    {ReactHtmlParser(this.props.description)}  {/* it gets properties that are unpacked in App.js from {...listData}. There is no need to import these props again here */}
+</div>
+
+### `map() method`:
 
 Below is correct syntax:
+`map()` method returns converted elements of array `this.state.columns` - it creates an instance of `Column` class by using JSX (it assigns proper props from initial array `this.state.columns` to the key and `columnProps` arguments
 ```javascript
-{this.state.columns.map(({ key, ...columnProps }) => (                  // the "map()" method returns an array with changed content
-    <Column key={key} {...columnProps} />                                 // it's mandatory to declare the "key" in JSX for objects/arrays
+{this.state.columns.map(({ key, ...columnProps }) => (                  >// the "map()" method returns an array with changed content
+    <Column key={key} {...columnProps} />                                 >// it's mandatory to declare the "key" in JSX for objects/arrays
     ))}
 ```
 
