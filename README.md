@@ -1,6 +1,8 @@
 # todolist
 
-##
+****
+
+## Packages instalation
 1. `npm install` - install all packages configured in package.json
 2. `npm start` - inits "webpack-dev-server --mode development --open --hot", (developer's version of the application)
 3. `npm run build - inits "webpack --mode production"` (production version of the application (stable)) - all the styles will be created in `/dist/styles_bundle_main.css`.
@@ -75,7 +77,8 @@ in `package.json` under `scripts`:
         "src/**/*.js": "eslint"
         },
 ```
-
+__
+## Files used:
 `styles_bundle_main.css` - all styles of the application
 `dist/scripts_bundle.js` - is a file that joints all JS code of our application which then is converted(translated) by Babel so that it's readable for web browser
 
@@ -85,6 +88,8 @@ in `package.json` under `scripts`:
 `normalize.css`, - unifies styles for different web browsers
 `global.scss`, -contains global styles e.g for body or fonts
 
+___
+## Definitions
 **Props_** - properties of element e.g for hour_picker:
     $ startHour: 12:00;
     $ endHour: 23:00;
@@ -109,7 +114,9 @@ export default MyComponent;
 
 `children` - if props are not defined(if they are not named) we can use prop "children" which will refer to children element of this class instance
 
-## addColumn function:
+___
+## Functions definition and explaination
+### addColumn function:
 
 Below is correct syntax:
 
@@ -156,7 +163,7 @@ addColumn(title) {
       });
 ```
 
-## map() method:
+### map() method:
 
 Below is correct syntax:
 ```javascript
