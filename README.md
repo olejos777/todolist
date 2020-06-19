@@ -45,6 +45,7 @@ Function component - simplier components that doesn't contain class e.g:
 # addColumn function:
 
 Below is correct syntax:
+
 addColumn(title) {
     this.setState(state => (
       {
@@ -62,6 +63,7 @@ addColumn(title) {
   }
 
   Don't use below (it will work well but it's not in line with rules):
+
       addColumn(title){
       this.setState(function(currentState){
 
