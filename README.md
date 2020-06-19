@@ -46,7 +46,7 @@ Function component - simplier components that doesn't contain class e.g:
 
 Below is correct syntax:
 
-addColumn(title) {
+{addColumn(title) {
     this.setState(state => (
       {
         columns: [
@@ -60,7 +60,8 @@ addColumn(title) {
         ],
       }
     ));
-  };
+}
+}
 
   Don't use below (it will work well but it's not in line with rules):
 
