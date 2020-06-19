@@ -2,13 +2,14 @@
 
 1. npm install - install all packages configured in package.json
 2. npm start - inits "webpack-dev-server --mode development --open --hot", (developer's version of the application)
-3. npm run build - inits "webpack --mode production" (production version of the application (stable)) - all the styles will be created in /dist/styles_bundle_main.css.
+3. npm run build - inits "webpack --mode production" (production version of the application (stable)) - all the styles will be created
++ in /dist/styles_bundle_main.css.
 4. npm install --save prop-types - package that allows to define type of props in each component (class and function component)
 5. npm install --save react-html-parser - allows to display text instead of HTML code in JSX objects
 6. npm install -D eslint - ESLint is a tool for identifying and reporting on patterns found in ECMAScript/JavaScript code
 7. npm install -D eslint-plugin-react - React specific linting rules for ESLint
 8. npm install -D babel-eslint - babel-eslint allows you to lint ALL valid Babel code with the fantastic ESLint.
-in .eslintrc.json (in main folder of project) add:
++ in .eslintrc.json (in main folder of project) add:
 
         {
         "env": {
