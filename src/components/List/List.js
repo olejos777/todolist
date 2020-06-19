@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import styles from './List.scss';
 import Hero from '../Hero/Hero.js';
 import PropTypes from 'prop-types';
@@ -18,6 +18,7 @@ class List extends React.Component {
     imageSource: PropTypes.string,
     description: PropTypes.node,
     columns: PropTypes.array,
+    image: PropTypes.string,
   };
 
   static defaultProps = {
@@ -33,9 +34,9 @@ class List extends React.Component {
             key: state.columns.length ? state.columns[state.columns.length - 1].key + 1 : 0,
             title,
             icon: 'list-alt',
-            cards: []
-          }
-        ]
+            cards: [],
+          },
+        ],
       }
     ));
   }
@@ -124,7 +125,7 @@ class List extends React.Component {
         </div>
       </section>
     );
-  };
+  }
 }
 
 export default List;

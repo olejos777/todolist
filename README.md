@@ -5,7 +5,9 @@
 # npm run build - inits "webpack --mode production" (production version of the application (stable)) - all the styles will be created in /dist/styles_bundle_main.css.
 # npm install --save prop-types - package that allows to define type of props in each component (class and function component)
 # npm install --save react-html-parser - allows to display text instead of HTML code in JSX objects
-
+# npm install -D eslint - ESLint is a tool for identifying and reporting on patterns found in ECMAScript/JavaScript code
+# npm install -D eslint-plugin-react - React specific linting rules for ESLint
+# npm install -D babel-eslint - babel-eslint allows you to lint ALL valid Babel code with the fantastic ESLint.
 
 styles_bundle_main.css - all styles of the application
 dist/scripts_bundle.js - is a file that joints all JS code of our application which then is converted(translated) by Babel so that it's readable for web browser

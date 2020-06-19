@@ -13,11 +13,11 @@ class App extends React.Component {
           // spread operator that unpacks object or array. All properties of from dataStore.listData will be assigned to the component List as its properties
           {...listData}
         >
-          <p>I'm going to do nothing and live like a king</p>
+          <p>I&apos;m going to do nothing and live like a king</p>
         </List>
       </main>
     );
-  };
-};
+  }
+}
 
 export default App;

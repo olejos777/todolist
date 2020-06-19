@@ -1,8 +1,6 @@
 import React from 'react';
-import styles from './Card.scss'
+import styles from './Card.scss';
 import PropTypes from 'prop-types';
-import Creator from '../Creator/Creator.js';
-
 
 class Card extends React.Component {
 
@@ -18,7 +16,7 @@ class Card extends React.Component {
         </h3>
       </section>
     );
-  };
-};
+  }
+}
 
 export default Card;
