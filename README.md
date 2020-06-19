@@ -60,7 +60,7 @@ addColumn(title) {
         ],
       }
     ));
-  }
+  };
 
   Don't use below (it will work well but it's not in line with rules):
 
