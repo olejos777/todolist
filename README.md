@@ -169,6 +169,7 @@ addColumn(title) {
 <div className={styles.description}>
     {ReactHtmlParser(this.props.description)}  {/* it gets properties that are unpacked in App.js from {...listData}. There is no need to import these props again here */}
 </div>
+```
 
 ### `map() method`:
 
