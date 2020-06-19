@@ -3,7 +3,10 @@ import './styles/normalize.scss';
 import './styles/global.scss';
 import ReactDOM from 'react-dom';
 import App from './components/App/App';
+import { Provider } from 'react-redux';     // Makes the Redux store available to the connect() calls in the component hierarchy below.
+import store from './redux/store.js';
 
-//                   what to render                      where to render
-ReactDOM.render(        <App />,                document.getElementById('app'));
+//          what to render and  where to render
+ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('app'));
+
 

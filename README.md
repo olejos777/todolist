@@ -106,9 +106,14 @@ in `package.json` under `scripts`:
 
 `.bablerc` - is a configuration file
 
-`settings.scss`, - contains various or mixins (it musn't contain styles - it can only contain Sass syntax)
-`normalize.css`, - unifies styles for different web browsers
-`global.scss`, -contains global styles e.g for body or fonts
+`settings.scss` - contains various or mixins (it musn't contain styles - it can only contain Sass syntax)
+`normalize.css` - unifies styles for different web browsers
+`global.scss` -contains global styles e.g for body or fonts
+`store.js` - keeps application **state**. It imports `initialStoreData` from `src/data/dataStore.js`. In `store.js` there should be stored only content that can be modified during application running.
+`initialStoreData` - is a stores application content such as
+- titles
+- subtitles
+- arrays of `List`'s, `Column`'s and `Card`'s
 
 ___
 ## Definitions
@@ -234,3 +239,5 @@ function({key, ...columnProps}){
     return <Column key={key} {...columnProps} />
 }
 ```
+### `{ Provider }`
+Makes the Redux store available to the `connect()` calls in the component hierarchy below
