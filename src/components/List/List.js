@@ -79,9 +79,8 @@ class List extends React.Component {
         <div className={styles.columns}>
           {/* map() method returns converted elements of array this.state.columns - it creates an instance of Column class by using JSX (it assigns proper props from initial array (this.state.columns) to the key and columnProps arguments*/}
           {this.state.columns.map(({ key, ...columnProps }) => (                  // the "map()" method returns an array with changed content
-            <Column key={key} {...columnProps} />                               // it's mandatory to declare the "key" in JSX for objects/arrays
+            <Column key={key} {...columnProps} />                                 // it's mandatory to declare the "key" in JSX for objects/arrays
           ))}
-
           {/*explaination of above: for each single column return {key} property assigned to other props (title, icon, cards)
 
                 function(singleColumn){
@@ -121,7 +120,7 @@ class List extends React.Component {
         <div className={styles.creator}>
           {/* "text" is a placeholder in input || action is init when "OK" button is clicked
           By using arrow function we ensure that this refers to instance of class List */}
-          <Creator text={settings.columnCreatorText} action={title => this.addColumn(title)}/>
+          <Creator text={settings.columnCreatorText} action={title => this.addColumn(title)} />
         </div>
       </section>
     );
