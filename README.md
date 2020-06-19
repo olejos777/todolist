@@ -44,6 +44,7 @@ Function component - simplier components that doesn't contain class e.g:
 
 # addColumn function:
 
+Below is correct syntax:
 addColumn(title) {
     this.setState(state => (
       {
