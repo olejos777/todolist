@@ -40,6 +40,30 @@ class List extends React.Component {
     ));
   }
 
+  /* Don't use below syntax:
+
+      addColumn(title){
+      this.setState(function(currentState){
+
+        // create new column object with properties
+        let newColumn = {
+          key: state.columns.length ? state.columns[state.columns.length-1].key+1 : 0,
+          title,
+          icon: 'list-alt',
+          cards: []
+        };
+
+        // create copy of current state
+        let newState = Array.from(currentState);
+
+        // add new column to new state
+        newState.columns.push(newColumn);
+
+        // return new state
+        return newState;
+      });
+*/
+
   render() {
     return (
       <section className={styles.component}>
