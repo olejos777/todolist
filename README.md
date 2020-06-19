@@ -77,8 +77,10 @@ in `package.json` under `scripts`:
         "src/**/*.js": "eslint"
         },
 ```
-10. [React developer tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi)
-__
+10. [React developer tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi) instalation
+
+***
+
 ## Files used:
 `styles_bundle_main.css` - all styles of the application
 `dist/scripts_bundle.js` - is a file that joints all JS code of our application which then is converted(translated) by Babel so that it's readable for web browser
