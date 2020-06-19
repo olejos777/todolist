@@ -41,30 +41,6 @@ class List extends React.Component {
     ));
   }
 
-  /* Don't use below syntax:
-
-      addColumn(title){
-      this.setState(function(currentState){
-
-        // create new column object with properties
-        let newColumn = {
-          key: state.columns.length ? state.columns[state.columns.length-1].key+1 : 0,
-          title,
-          icon: 'list-alt',
-          cards: []
-        };
-
-        // create copy of current state
-        let newState = Array.from(currentState);
-
-        // add new column to new state
-        newState.columns.push(newColumn);
-
-        // return new state
-        return newState;
-      });
-*/
-
   render() {
     return (
       <section className={styles.component}>
@@ -82,39 +58,6 @@ class List extends React.Component {
           {this.state.columns.map(({ key, ...columnProps }) => (                  // the "map()" method returns an array with changed content
             <Column key={key} {...columnProps} />                                 // it's mandatory to declare the "key" in JSX for objects/arrays
           ))}
-          {/*explaination of above: for each single column return {key} property assigned to other props (title, icon, cards)
-
-                function(singleColumn){
-                  const key = singleColumn.key;
-
-                  const columnProps = {};
-
-                  for(let propName in singleColumn){
-                    if(propName != 'key'){
-                      columnProps[propName] = singleColumn[propName];
-                    }
-                  }
-
-                  return <Column key={key} {...columnProps} />
-                }
-
-
-                or:
-
-                function(singleColumn){
-                  {key, ...columnProps} = singleColumn;
-
-                  return <Column key={key} {...columnProps} />
-                }
-
-                en zapis oszczędził nam sporo miejsca! Ale skoro tylko raz używamy argumentu singleColumn, to możemy w ogóle go nie nazywać,
-                tylko od razu w deklaracji argumentów użyć wyrażenia {key, ...columnProps}.
-
-                function({key, ...columnProps}){
-                  return <Column key={key} {...columnProps} />
-                }
-
-          */
           }
         </div>
 

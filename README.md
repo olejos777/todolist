@@ -8,6 +8,68 @@
 6. npm install -D eslint - ESLint is a tool for identifying and reporting on patterns found in ECMAScript/JavaScript code
 7. npm install -D eslint-plugin-react - React specific linting rules for ESLint
 8. npm install -D babel-eslint - babel-eslint allows you to lint ALL valid Babel code with the fantastic ESLint.
++ in .eslintrc.json (in main folder of project) add:
+        {
+        "env": {
+            "es6": true,
+            "browser": true,
+            "node": true
+        },
+        "parser": "babel-eslint",
+        "parserOptions": {
+            "ecmaVersion": 6,
+            "sourceType": "module",
+            "ecmaFeatures": {
+                "jsx": true
+            }
+        },
+        "settings": {
+            "react": {
+            "version": "detect"
+            }
+        },
+        "plugins": [
+            "react"
+        ],
+        "extends": [
+            "eslint:recommended",
+            "plugin:react/recommended"
+        ],
+        "rules": {
+            "indent": [
+            "error",
+            2,
+            {"SwitchCase": 1}
+            ],
+            "linebreak-style": [
+            "off"
+            ],
+            "quotes": [
+            "error",
+            "single",
+            {"allowTemplateLiterals": true}
+            ],
+            "semi": [
+            "error",
+            "always"
+            ],
+            "comma-dangle": [
+            "error",
+            "always-multiline"
+            ],
+            "no-console": "off"
+        }
+        }
+9. npm install -D lint-staged - Run linters against staged git files and don't let 💩 slip into your code base!
++ in package.json under scripts
+        "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+        },
+        "lint-staged": {
+        "src/**/*.js": "eslint"
+        },
 
 styles_bundle_main.css - all styles of the application
 dist/scripts_bundle.js - is a file that joints all JS code of our application which then is converted(translated) by Babel so that it's readable for web browser
@@ -93,7 +155,7 @@ Below is correct syntax:
             <Column key={key} {...columnProps} />                                 // it's mandatory to declare the "key" in JSX for objects/arrays
           ))}
 
-Dont
+Don't use below (it will work well but it's not in line with rules):
 
         function(singleColumn){
             const key = singleColumn.key;
