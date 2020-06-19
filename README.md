@@ -46,22 +46,21 @@ Function component - simplier components that doesn't contain class e.g:
 
 Below is correct syntax:
 
-{addColumn(title) {
-    this.setState(state => (
-      {
-        columns: [
-          ...state.columns,
-          {
-            key: state.columns.length ? state.columns[state.columns.length - 1].key + 1 : 0,
-            title,
-            icon: 'list-alt',
-            cards: [],
-          },
-        ],
-      }
-    ));
-}
-};
+            addColumn(title) {
+                this.setState(state => (
+                {
+                    columns: [
+                    ...state.columns,
+                    {
+                        key: state.columns.length ? state.columns[state.columns.length - 1].key + 1 : 0,
+                        title,
+                        icon: 'list-alt',
+                        cards: [],
+                    },
+                    ],
+                }
+                ));
+
 
   Don't use below (it will work well but it's not in line with rules):
 
