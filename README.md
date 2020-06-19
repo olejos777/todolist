@@ -12,7 +12,7 @@
 styles_bundle_main.css - all styles of the application
 dist/scripts_bundle.js - is a file that joints all JS code of our application which then is converted(translated) by Babel so that it's readable for web browser
 
-.bablerc - is a configuration filr
+.bablerc - is a configuration file
 
 settings.scss, - contains various or mixins (it musn't contain styles - it can only contain Sass syntax)
 normalize.css, - unifies styles for different web browsers
@@ -41,3 +41,43 @@ Function component - simplier components that doesn't contain class e.g:
 
 
 // children - if props are not defined(if they are not named) we can use prop "children" which will refer to children element of this class instance
+
+# addColumn function:
+
+addColumn(title) {
+    this.setState(state => (
+      {
+        columns: [
+          ...state.columns,
+          {
+            key: state.columns.length ? state.columns[state.columns.length - 1].key + 1 : 0,
+            title,
+            icon: 'list-alt',
+            cards: [],
+          },
+        ],
+      }
+    ));
+  }
+
+  Don't use below (it will work well but it's not in line with rules):
+      addColumn(title){
+      this.setState(function(currentState){
+
+        // create new column object with properties
+        let newColumn = {
+          key: state.columns.length ? state.columns[state.columns.length-1].key+1 : 0,
+          title,
+          icon: 'list-alt',
+          cards: []
+        };
+
+        // create copy of current state
+        let newState = Array.from(currentState);
+
+        // add new column to new state
+        newState.columns.push(newColumn);
+
+        // return new state
+        return newState;
+      });
