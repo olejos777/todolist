@@ -19,9 +19,28 @@
 ****
 
 ## 13.3
-Imports flow:
-    `Index.js` imports `Store.js`:
-    ![alt text](./Readme/indexjs.png "import Store.js")
+Flow:
+1. `dataStore.js` contains the props that are unpacked to new objects in `const initialStoreData`
+![alt text](./Readme/datastorejs.png "dataStore.js")
+
+2. `store.js` imports`initialStoreData` and uses it in newly defined const `initialState`
+![alt text](./Readme/storejs.png "store.js")
+
+3. `Index.js` imports `store.js` and through the `Provider` it makes the Redux store available to the connect() calls in the component hierarchy
+![alt text](./Readme/indexjs.png "import Index.js")
+
+4. `App.js` receives props from `store.js` through `Provider`
+![alt text](./Readme/appjs.png "import App.js")
+
+5. `AppContainer.js`
+- imports a component for which it is a container: `App.js`
+- contains const mapStateToProps which contains a fuction that defines binding props with a state
+- exports a `connect` (which is imported from `react-redux`) that returns another function that connect a component with a state according to defined arguments. This returned function is initiated with an argument `App`. A result of function returned by another function is exported and can be used in other components like it was a component `App`.
+In order to share the **subtitle** to the component `App` you just need to add another argument to the arrow function in `mapStateToProps`:
+>title: state.app.title,
+![alt text](./Readme/appcontainerjs.png "import AppContainer.js")
+
+
 
 ## Packages instalation
 1. `npm install` - install all packages configured in package.json
@@ -126,7 +145,7 @@ In order to share the **subtitle** to the component `App` you just need to add a
 
 The `mapStateToProps` returns an object in which:
 - the key is the prop's name (the one that will be available in a component)
-- the value  of the prop\s uses the `state` argument in order to collect proper information from the application state.
+- the value  of the prop's uses the `state` argument in order to collect proper information from the application state.
 ___
 ## Definitions
 **Props_** - properties of element e.g for hour_picker:
