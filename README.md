@@ -18,6 +18,11 @@
 
 ****
 
+## 13.3
+Imports flow:
+    `Index.js` imports `Store.js`:
+    ![alt text](./Readme/indexjs.png "import Store.js")
+
 ## Packages instalation
 1. `npm install` - install all packages configured in package.json
 2. `npm start` - inits "webpack-dev-server --mode development --open --hot", (developer's version of the application)
@@ -101,20 +106,27 @@ in `package.json` under `scripts`:
 ***
 
 ## Files used:
-`styles_bundle_main.css` - all styles of the application
-`dist/scripts_bundle.js` - is a file that joints all JS code of our application which then is converted(translated) by Babel so that it's readable for web browser
-
-`.bablerc` - is a configuration file
-
-`settings.scss` - contains various or mixins (it musn't contain styles - it can only contain Sass syntax)
-`normalize.css` - unifies styles for different web browsers
-`global.scss` -contains global styles e.g for body or fonts
-`store.js` - keeps application **state**. It imports `initialStoreData` from `src/data/dataStore.js`. In `store.js` there should be stored only content that can be modified during application running.
-`initialStoreData` - is a stores application content such as
+1. `styles_bundle_main.css` - all styles of the application
+2. `dist/scripts_bundle.js` - is a file that joints all JS code of our application which then is converted(translated) by Babel so that it's readable for web browser
+3. `.bablerc` - is a configuration file
+4. `settings.scss` - contains various or mixins (it musn't contain styles - it can only contain Sass syntax)
+5. `normalize.css` - unifies styles for different web browsers
+6. `global.scss` -contains global styles e.g for body or fonts
+7. `store.js` - keeps application **state**. It imports `initialStoreData` from `src/data/dataStore.js`. In `store.js` there should be stored only content that can be modified during application running.
+8. `initialStoreData` - is a stores application content such as
 - titles
 - subtitles
 - arrays of `List`'s, `Column`'s and `Card`'s
+9. `AppContainer.js`:
+- imports a component for which it is a container: `App.js`
+- contains const mapStateToProps which contains a fuction that defines binding props with a state
+- exports a `connect` (which is imported from `react-redux`) that returns another function that connect a component with a state according to defined arguments. This returned function is initiated with an argument `App`. A result of function returned by another function is exported and can be used in other components like it was a component `App`.
+In order to share the **subtitle** to the component `App` you just need to add another argument to the arrow function in `mapStateToProps`:
+>title: state.app.title,
 
+The `mapStateToProps` returns an object in which:
+- the key is the prop's name (the one that will be available in a component)
+- the value  of the prop\s uses the `state` argument in order to collect proper information from the application state.
 ___
 ## Definitions
 **Props_** - properties of element e.g for hour_picker:

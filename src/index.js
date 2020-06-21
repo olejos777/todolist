@@ -2,7 +2,7 @@ import React from 'react';
 import './styles/normalize.scss';
 import './styles/global.scss';
 import ReactDOM from 'react-dom';
-import App from './components/App/App';
+import App from './components/App/AppContainer';
 import { Provider } from 'react-redux';     // Makes the Redux store available to the connect() calls in the component hierarchy below.
 import store from './redux/store.js';
 
