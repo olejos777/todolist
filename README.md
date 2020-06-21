@@ -36,10 +36,7 @@ Flow:
 - imports a component for which it is a container: `App.js`
 - contains const mapStateToProps which contains a fuction that defines binding props with a state
 - exports a `connect` (which is imported from `react-redux`) that returns another function that connect a component with a state according to defined arguments. This returned function is initiated with an argument `App`. A result of function returned by another function is exported and can be used in other components like it was a component `App`.
-In order to share the **subtitle** to the component `App` you just need to add another argument to the arrow function in `mapStateToProps`:
->title: state.app.title,
 ![alt text](./Readme/appcontainerjs.png "import AppContainer.js")
-
 
 
 ## Packages instalation
