@@ -20,7 +20,7 @@
 
 ## 13.3
 Flow:
-1. `dataStore.js` contains the props that are unpacked to new objects in `const initialStoreData`
+1. `dataStore.js` contains the props that are unpacked to new objects in const `initialStoreData`
 ![alt text](./Readme/datastorejs.png "dataStore.js")
 
 2. `store.js` imports`initialStoreData` and uses it in newly defined const `initialState`
