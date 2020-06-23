@@ -20,7 +20,7 @@ export const pageContents = {
 };
 
 export const listData = {
-  title: 'Things to do <sup>soon!</sup>',
+  title: 'Things to do <sup>soooooooooon!</sup>',
   description: 'Interesting things I want to check out!',
   image: 'http://uploads.kodilla.com/bootcamp/fer/11.react/space.png',
   columns: [
@@ -76,7 +76,7 @@ const lists = [
   {
     id: 'list-1',
     title: 'Things to do <sup>soon!</sup>',
-    description: 'Interesting things I want to check out!',
+    description: 'Interesting things I want to check out now!',
     image: 'http://uploads.kodilla.com/bootcamp/fer/11.react/space.png',
   },
 ];
