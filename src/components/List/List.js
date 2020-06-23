@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './List.scss';
 import Hero from '../Hero/Hero.js';
 import PropTypes from 'prop-types';
-//import Column from '../Column/Column.js';
+import Column from '../Column/Column.js';
 import { settings } from '../../data/dataStore';
 import ReactHtmlParser from 'react-html-parser';
 //import Creator from '../Creator/Creator.js';
@@ -21,7 +21,7 @@ class List extends React.Component {
   }
 
   render() {
-    const { title, image, description } = this.props;
+    const { title, image, description, columns } = this.props;
 
     return (
       <section className={styles.component}>
@@ -32,11 +32,11 @@ class List extends React.Component {
           {ReactHtmlParser(description)}  {                       /* it gets properties that are unpacked in App.js from {...listData}. There is no need to import these props again here */}
         </div>
 
-        {/*<div className={styles.columns}>
-          {this.state.columns.map(({ key, ...columnProps }) => (
-            <Column key={key} {...columnProps} />
+        <div className={styles.columns}>
+          {columns.map(columnData => (
+            <Column key={columnData.id} {...columnData} />
           ))}
-          </div>*/}
+        </div>
 
         {/*<div className={styles.creator}>
            "text" is a placeholder in input || action is init when "OK" button is clicked

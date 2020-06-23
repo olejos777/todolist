@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './App.scss';  // loaders configured in webpack.config.js in "module" section extract new components with styles
-import List from '../List/List.js';
+import List from '../List/ListContainer.js';
 import PropTypes from 'prop-types';
 
 class App extends React.Component {
