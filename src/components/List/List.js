@@ -21,15 +21,15 @@ class List extends React.Component {
   }
 
   render() {
-    const {title, image, description } = this.props;
+    const { title, image, description } = this.props;
 
     return (
       <section className={styles.component}>
         <Hero
-          titleText={title} imageSource={image} />                                        {/* titleText - prop name (we choose the name) which is provided to component Hero. // this.props - refers to this class instance (App in this case). title - it's name of the prop (we choose the name for the props but has to be the same like in class from which it's imported) */}
+          titleText={title} imageSource={image} />                {/* titleText - prop name (we choose the name) which is provided to component Hero. // this.props - refers to this class instance (App in this case). title - it's name of the prop (we choose the name for the props but has to be the same like in class from which it's imported) */}
 
         <div className={styles.description}>
-          {ReactHtmlParser(description)}  {/* it gets properties that are unpacked in App.js from {...listData}. There is no need to import these props again here */}
+          {ReactHtmlParser(description)}  {                       /* it gets properties that are unpacked in App.js from {...listData}. There is no need to import these props again here */}
         </div>
 
         {/*<div className={styles.columns}>
