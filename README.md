@@ -39,6 +39,10 @@ Flow:
 ![alt text](./Readme/appcontainerjs.png "import AppContainer.js")
 
 
+### ListContainer getColumnsForLists:
+1. `ListContainer.js` contains `getColumnsForLists` method that returns `Columns` only for the `List` with proper `listId`.
+![alt text](./Readme/ListContainerjs.png "ListContainer.js")
+
 ## Packages instalation
 1. `npm install` - install all packages configured in package.json
 2. `npm start` - inits "webpack-dev-server --mode development --open --hot", (developer's version of the application)
