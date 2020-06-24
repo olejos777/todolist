@@ -42,6 +42,7 @@ Flow:
 ### ListContainer getColumnsForLists:
 1. `ListContainer.js` contains `getColumnsForLists` method that returns `Columns` only for the `List` with proper `listId`.
 ![alt text](./Readme/ListContainerjs.png "ListContainer.js")
+![alt text](./Readme/ListContainerjs2.png "ListContainer.js")
 
 ## Packages instalation
 1. `npm install` - install all packages configured in package.json
