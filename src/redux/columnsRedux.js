@@ -7,8 +7,10 @@ export const getColumnsForList = ({ columns }, listId) => columns.filter(column 
 const reducerName = 'columns';
 const createActionName = name => `app/${reducerName}/${name}`;
 
+
 // action types
 export const ADD_COLUMN = createActionName('ADD_COLUMN');
+console.log(ADD_COLUMN);
 
 // action creators
 export const createActionAddColumn = payload => ({ payload: { ...payload, id: shortid.generate() }, type: ADD_COLUMN });
@@ -22,3 +24,5 @@ export default function reducer(state = [], action = {}) {
       return state;
   }
 }
+
+console.log(reducer());
