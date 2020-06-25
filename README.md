@@ -123,6 +123,7 @@ in `package.json` under `scripts`:
 11. `npm install -S redux@4.0.1 react-redux@7.0.1` - package to run Redux
 12. `npm install -D redux-devtools-extension@2.13.8` - package that allows to view `store` content with DevTools
 13. [Redux DevTools to see `store` content](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd)
+14. `npm install -S shortid` -
 
 ***
 
@@ -144,6 +145,7 @@ in `package.json` under `scripts`:
 - exports a `connect` (which is imported from `react-redux`) that returns another function that connect a component with a state according to defined arguments. This returned function is initiated with an argument `App`. A result of function returned by another function is exported and can be used in other components like it was a component `App`.
 In order to share the **subtitle** to the component `App` you just need to add another argument to the arrow function in `mapStateToProps`:
 >title: state.app.title,
+10. `columnsRedux.js` - it contains a code to maintain all columns from `Column.js` by redux **store**.
 
 The `mapStateToProps` returns an object in which:
 - the key is the prop's name (the one that will be available in a component)
