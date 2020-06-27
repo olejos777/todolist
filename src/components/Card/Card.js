@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 const Card = props => (
   <section className={styles.component}>
     <h3 className={styles.title}>
-      {props.title}                          {/* it gets the title defined in List.js from objects <Column ... /> */}
+      {props.title}
     </h3>
   </section>
 );
