@@ -37,14 +37,19 @@ class List extends React.Component {
           {columns.map(columnData => (
             <Column key={columnData.id} {...columnData} />
           ))}
+          {console.log('columns.map to: ', columns.map(columnData => (
+            <Column key={columnData.id} {...columnData} />
+          )))}
         </div>
 
         <div className={styles.creator}>
           <Creator text={settings.columnCreatorText} action={addColumn} />
+          {console.log('addColumn to: ', addColumn)}
         </div>
       </section>
     );
   }
 }
+
 
 export default List;

@@ -38,13 +38,100 @@ Flow:
 - exports a `connect` (which is imported from `react-redux`) that returns another function that connect a component with a state according to defined arguments. This returned function is initiated with an argument `App`. A result of function returned by another function is exported and can be used in other components like it was a component `App`.
 ![alt text](./Readme/appcontainerjs.png "import AppContainer.js").
 
-
 ### ListContainer getColumnsForLists:
 1. `ListContainer.js` contains `getColumnsForLists` method that returns `Columns` only for the `List` with proper `listId`.
 ![alt text](./Readme/ListContainerjs.png "ListContainer.js")
 ![alt text](./Readme/ListContainerjs2.png "ListContainer.js")
 
-## Packages instalation
+## 13.4
+
+### change of the apllication state through dispatched action:
+1. `mapDispatchToProps` add props to component (value of props is a funtion that dispatch actions to the `store`). It's an action that signalizes a wish to change an application state.
+`dispatch` function is an argument of `mapDispatchToProps`. It dispatches an action to the `store`.
+2. `AddColumn` receives an argument "*title*". Base on this argument `dispatch` function will be initialed
+3. In order to create an `action` we use `createActionAddColumn` (defined in `columnRedux.js`).
+The fuction has 2 arguments: "*title: title*" and "*listId: props.id*"
+
+Selector in Redux is a function that filters out defined application state (wg. displaying only selected columns in proper list)
+
+4. gerColumnsForList selects columns from proper list (based on listId parameter). "*state*"
+ needs to be the first argument in the function ("*state*" is the whole application state). Thanks to that in `ListContainer` we don;t need to know the whole application's state structure - we don;t care if `Column` is *`state.columns`* or *`state.toDoApp.columns`* or other. It;s important for the future changes to the application's state structure (we want to make changes only in the files located in src/redux and the components containers can be not *aware* of the state changes).
+ In `reducerName` we store te store.props on which we are going to dispatch the action (e.g for columns the `reducerName` = `columns`)
+ ![alt text](./Readme/ColumnsRedux.png)
+
+ 1. `addColumn` is defined in `ListContainer.js` and then used in `List.js`
+ 2. `Creator` dispatch and `action`  with `addColumn`
+ 3. Reducer reacts on the dispatched action and initialize the function received in prop `action`. This initializes dispatching an action to the `store`. The `store` will initialize all the reducers
+![alt text](./Readme/DispatchActionToReducer.png "dispatchactiontoreducer")
+
+ 1. the **reducer** alsways returns the **state**.
+   If action type is correct (fits to ADD_COLUMN) in `switch` then it will initialize a function that will update the application **State**.
+
+ 2. The **reducer** has to be a *clean_* function:
+>Funkcja czysta to taka funkcja, która zawsze da ten sam rezultat, jeśli dostanie te same argumenty. Zobaczmy przykład funkcji czystej:
+>
+>const addNumbers = (a, b) => a + b;
+>
+>console.log( addNumbers(2, 3) ); // 5
+>console.log( addNumbers(2, 3) ); // 5
+>console.log( addNumbers(2, 3) ); // 5
+>Jak widzisz, wykonaliśmy tę funkcję kilka razy z tymi samymi argumentami, i za każdym razem otrzymaliśmy ten sam wynik. Nie ma niczego, co moglibyśmy wpisać pomiędzy uruchomieniami tej funkcji, aby zmienić jej wynik.
+>
+>Inaczej będzie w przypadku funkcji nieczystej – weźmy za przykład funkcję przeliczającą cenę netto na brutto:
+>
+>let profitMargin = 1.1;
+let tax = 1.23;
+>
+>const netToGross = (a) => a * profitMargin * tax;
+>
+>console.log( netToGross(10) ); // 13.53
+>profitMargin = 1.2;
+>console.log( netToGross(10) ); // 14.76
+>tax = 1.08;
+>console.log( netToGross(10) ); // 12.96
+>Tym razem, pomiędzy wywołaniami funkcji netToGross mogliśmy zmieniać wartości zmiennych, które wpływają na jej wynik. W związku z tym wynik był różny, mimo że za każdym razem użyliśmy tego samego argumentu.
+>
+>Jak możemy zmienić tę funkcję, aby była funkcją czystą? Jej wynik musi zależeć wyłącznie od argumentów, czyli moglibyśmy napisać np.
+>
+``` javascript
+const profitMargin = 1.1;
+const tax = 1.23;
+
+const netToGross = (a, factor1 = profitMargin, factor2 = tax) => a * factor1 * factor2;
+
+console.log( netToGross(10) ); // 13.53
+console.log( netToGross(10, 1.2) ); // 14.76
+console.log( netToGross(10, 1.2, 1.08) ); // 12.96
+console.log( netToGross(10, 1.2, 1.08) ); // 12.96
+console.log( netToGross(10, 1.2, 1.08) ); // 12.96
+```
+>Tym razem wynik zmienia się tylko, kiedy użyjemy innych argumentów. Mogliśmy użyć domyślnych wartości argumentów funkcji, ale najważniejsze, że nie mogą one ulec zmianie pomiędzy wykonaniami funkcji. Dzięki temu każde wykonanie funkcji z pewnymi argumentami da ten sam wynik, niezależnie od tego, jaki kod zostanie wykonany w międzyczasie.
+>
+>W Reduksie, reducer musi być funkcją czystą. Innymi słowy, może wykonywać operacje wyłącznie w oparciu o otrzymane argumenty oraz wartości stałych zdefiniowanych poza reducerem. Nie może korzystać ze zmiennych zdefiniowanych poza reducerem, ani z żadnych funkcji nieczystych (nawet jeśli zostały zapisane w stałych).
+>
+>Ta zasada sprawia, że reducer działa w bardzo przewidywalny sposób. Dla przykładu, jeśli stan aplikacji ma początkowe wartości, to dodanie kolumny o nazwie Restaurants i listId równym 0, zawsze będzie miało ten sam efekt. Nie ważne na jakim urządzeniu otworzyliśmy stronę, czy kolumna jest dodawana przez Creator czy inny komponent, etc.
+>
+>Może Ci się wydawać to zbędną i nudną teorią, której i tak mamy sporo w tym module – te zasady jednak pozwolą Ci uniknąć mnóstwa błędów. Dlatego warto zapamiętać (albo nawet zapisać) zasady, które musi spełniać każdy reducer.
+
+3. the **reducer** never changes received **state** but returns new object/array that contains current **state**  updated with newly added object.
+
+>Wreszcie, pozostało nam przyjrzeć się sytuacji, w której nasz reducer z pliku columnsRedux.js otrzyma akcję typu ADD_COLUMN. Wtedy zwróci nową tablicę, w której znajdzie się rozpakowany dotychczasowy stan, oraz dodany nowy obiekt. W tym obiekcie rozpakowany zostanie payload akcji, oraz stworzone zostanie id kolumny (za pomocą biblioteki shortid, o której powiemy za chwilę).
+>
+>Możesz pomyśleć, że cała ta operacja jest bez sensu – przecież wystarczyłoby użyć metody push, aby dodać nowy element do statePart. To by jednak złamało trzecią zasadę, która mówi, że reducer nie zmienia otrzymanego stanu.
+>
+>Wynika to z tego, że magazyn potrzebuje porównać stan sprzed uruchomienia reducerów, ze stanem otrzymanym po ich wykonaniu. W oparciu o to, co zmieniło się w stanie, magazyn będzie mógł wykonać odpowiednie akcje – np. poinformować komponenty o zmianie wartości.
+>
+>Dlatego zawsze musimy dbać o to, aby zwracany stan – jeśli ma być jakkolwiek inny od otrzymanego w argumencie – był zupełnie nowym obiektem (lub tablicą).
+>
+>Dobra wiadomość jest taka, że jeśli statePart jest tablicą, to przy dodawaniu elementów możemy wykorzystać destrukturyzację (rozpakowanie tablicy za pomocą ...statePart), a przy innych manipulacjach możemy wykorzystywać metody map, filter czy slice. Szczególnie w przypadku tej ostatniej, uważaj, aby nie pomylić jej z metodą splice, która modyfikuje tablicę, na której jest wykonywana!
+>
+>**Wykorzystanie pakietu shortid_*
+Ten pakiet pozwala nam na generowanie krótkich, losowych identyfikatorów. Dzięki niemu możemy być spokojni, że identyfikatory poszczególnych kart nie będą się powtarzać.
+>
+>W naszej aplikacji nie potrzebujemy, aby identyfikatory kart czy kolumn były inkrementowane, czyli były kolejnymi liczbami. Dlatego łatwiej nam będzie zastosować losowe identyfikatory, niż sprawdzać, jaki id nie był jeszcze użyty.
+
+
+ ## Packages instalation
 1. `npm install` - install all packages configured in package.json
 2. `npm start` - inits "webpack-dev-server --mode development --open --hot", (developer's version of the application)
 3. `npm run build - inits "webpack --mode production"` (production version of the application (stable)) - all the styles will be created in `/dist/styles_bundle_main.css`.
