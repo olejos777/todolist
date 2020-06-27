@@ -219,7 +219,7 @@ in `package.json` under `scripts`:
     * `heroku git:remote -a app_name` - links Git repository with Heroku
     * `git push heroku master` - publish a page to heroku
     * `heroku open` - opens published web page
-
+16. `npm install -S react-beautiful-dnd` - plugin created by Atlassian (owner of Jira, BitBucket, Trello)
 
 ***
 
