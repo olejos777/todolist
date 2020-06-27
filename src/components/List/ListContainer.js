@@ -16,5 +16,5 @@ const mapDispatchToProps = (dispatch, props) => ({                          // t
 
 export default connect(mapStateToProps, mapDispatchToProps)(List);
 
-console.log('mapDispatchToProps: ', mapDispatchToProps());
-console.log('connect: ', connect(mapStateToProps, mapDispatchToProps)(List));
+//console.log('mapDispatchToProps: ', mapDispatchToProps());
+//console.log('connect: ', connect(mapStateToProps, mapDispatchToProps)(List));
