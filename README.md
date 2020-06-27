@@ -210,7 +210,16 @@ in `package.json` under `scripts`:
 11. `npm install -S redux@4.0.1 react-redux@7.0.1` - package to run Redux
 12. `npm install -D redux-devtools-extension@2.13.8` - package that allows to view `store` content with DevTools
 13. [Redux DevTools to see `store` content](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd)
-14. `npm install -S shortid` -
+14. `npm install -S shortid` - it add unique random `id`. It guarantee that particular card `id` will not be repeated. We don't need to care what `id` was used because probability of reapeated randomly generated `id` is close to 0.
+15. `npm install http-server` - allows publish project on Heroku
+    * Add `Procfile` with following content:
+    >web: http-server dist
+    * `heroku login` - to login to your Heroku account
+    * `heroku create app_name`- creates an app with selected name
+    * `heroku git:remote -a app_name` - links Git repository with Heroku
+    * `git push heroku master` - publish a page to heroku
+    * `heroku open` - opens published web page
+
 
 ***
 
