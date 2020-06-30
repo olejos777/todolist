@@ -9,33 +9,33 @@ import Creator from '../Creator/Creator.js';
 import Container from '../Container/Container';
 
 const List = props => (
-  <Container><section className={styles.component}>
-    <Hero
-      titleText={props.title} imageSource={props.image} />
+  <Container>
+    <section className={styles.component}>
+      <Hero
+        titleText={props.title} imageSource={props.imageList} />
 
-    <div className={styles.description}>
-      {ReactHtmlParser(props.description)}
-    </div>
+      <div className={styles.description}>
+        {ReactHtmlParser(props.description)}
+      </div>
 
-    <div className={styles.columns}>
-      {props.columns.map(columnData => (
-        <Column key={columnData.id} {...columnData} />
-      ))}
-    </div>
+      <div className={styles.columns}>
+        {props.columns.map(columnData => (
+          <Column key={columnData.id} {...columnData} />
+        ))}
+      </div>
 
-    <div className={styles.creator}>
-      <Creator text={settings.columnCreatorText} action={props.addColumn} />
-    </div>
-  </section>
+      <div className={styles.creator}>
+        <Creator text={settings.columnCreatorText} action={props.addColumn} />
+      </div>
+    </section>
   </Container>
 );
 
 List.propTypes = {
   title: PropTypes.node,
-  imageSource: PropTypes.string,
   description: PropTypes.node,
   columns: PropTypes.array,
-  image: PropTypes.string,
+  imageList: PropTypes.string,
   addColumn: PropTypes.func,
 };
 

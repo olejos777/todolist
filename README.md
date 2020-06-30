@@ -236,7 +236,8 @@ Add following code under `output` in the webpack file
  devServer: {
     historyApiFallback: true,                                                     // it allows servering of `index.html` file in case the server returns error 404
   },
-  ```
+```
+18. `npm install -S react-router-transition@1.4.0` - animated views switch
 
 ***
 

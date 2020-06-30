@@ -22,6 +22,10 @@ export const settings = {
 export const pageContents = {
   title: 'My first React app',
   subtitle: 'A simple to-do app, with lists, columns and cards',
+  titleFaq: 'Frequently Asked Questions',
+  titleInfo: 'Info about the page',
+  imageInfo: 'https://images.pexels.com/photos/3243090/pexels-photo-3243090.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+  imageFaq: 'https://i0.wp.com/psychologiafotografii.pl/wp-content/uploads/2019/06/question-mark-1872665_1920.jpg?resize=1024%2C563&ssl=1',
 };
 
 export const listData = {
@@ -82,7 +86,7 @@ const lists = [
     id: 'list-1',
     title: 'Things to do <sup>soon!</sup>',
     description: 'Interesting things I want to check out now!',
-    image: 'http://uploads.kodilla.com/bootcamp/fer/11.react/space.png',
+    imageList: 'http://uploads.kodilla.com/bootcamp/fer/11.react/space.png',
   },
 ];
 
