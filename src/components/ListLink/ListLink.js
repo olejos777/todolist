@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
 import {settings} from '../../data/dataStore';
 import ReactHtmlParser from 'react-html-parser';
 
-const ListLink = ({id, title, image, description}) => (
+const ListLink = ({id, title, imageList, description}) => (
   <Link to={`/list/${id}`} className={styles.link}>
     <section className={styles.component}>
       <div className={styles.text}>
@@ -15,7 +15,7 @@ const ListLink = ({id, title, image, description}) => (
         </div>
       </div>
       <div className={styles.image}>
-        <img src={image} />
+        <img src={imageList} />
       </div>
     </section>
   </Link>
@@ -25,7 +25,7 @@ ListLink.propTypes = {
   id: PropTypes.string,
   title: PropTypes.node.isRequired,
   description: PropTypes.node,
-  image: PropTypes.string.isRequired,
+  imageList: PropTypes.string.isRequired,
 };
 
 ListLink.defaultProps = {
