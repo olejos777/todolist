@@ -13,7 +13,11 @@ export const settings = {
   },
   defaultListDescription: '<p>I can do all the things!!!</p>',
   defaultColumnIcon: 'list-alt',
+  header: {
+    icon: 'clipboard-list',
+  },
 };
+
 
 export const pageContents = {
   title: 'My first React app',
