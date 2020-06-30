@@ -1,12 +1,10 @@
 import React from 'react';
 import styles from './Home.scss';  // loaders configured in webpack.config.js in "module" section extract new components with styles
-import List from '../List/ListContainer.js';
+import ListLink from '../ListLink/ListLink.js';
 import PropTypes from 'prop-types';
 import Creator from '../Creator/Creator.js';
 import { settings } from '../../data/dataStore';
-import Search from '../Search/SearchContainer';
 import { DragDropContext } from 'react-beautiful-dnd';
-
 
 class Home extends React.Component {
   static propTypes = {
@@ -47,10 +45,9 @@ class Home extends React.Component {
       <main className={styles.component}>
         <h1 className={styles.title}>{title}</h1>
         <h2 className={styles.subtitle}>{subtitle}</h2>
-        <Search />
         <DragDropContext onDragEnd={moveCardHandler}>
           {lists.map(listData => (
-            <List key={listData.id} {...listData} />
+            <ListLink key={listData.id} {...listData} />
           ))}
         </DragDropContext>
         <div className={styles.creator}>
