@@ -6,11 +6,10 @@ import Column from '../Column/ColumnContainer.js';
 import { settings } from '../../data/dataStore';
 import ReactHtmlParser from 'react-html-parser';
 import Creator from '../Creator/Creator.js';
-
-
+import Container from '../Container/Container';
 
 const List = props => (
-  <section className={styles.component}>
+  <Container><section className={styles.component}>
     <Hero
       titleText={props.title} imageSource={props.image} />
 
@@ -28,6 +27,7 @@ const List = props => (
       <Creator text={settings.columnCreatorText} action={props.addColumn} />
     </div>
   </section>
+  </Container>
 );
 
 List.propTypes = {

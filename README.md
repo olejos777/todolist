@@ -1,6 +1,6 @@
 # todolist
 
-## React
+## React Router is a declarative Routing for React
 
 ## Redux
 `Redux` - is a library that helps managing the application **state**. It implements store which is an object that stores application **state**. It contains also package of methods that allows the `store` handling
@@ -220,6 +220,23 @@ in `package.json` under `scripts`:
     * `git push heroku master` - publish a page to heroku
     * `heroku open` - opens published web page
 16. `npm install -S react-beautiful-dnd` - plugin created by Atlassian (owner of Jira, BitBucket, Trello)
+17. `npm install -S react-router-dom@5.0.0` - declarative routing for `React`
+> need to implement following changes to `webpack.config.js`:
+Add `publicPath: '/',` to the `output`
+```json
+ output: {
+    path: path.join(__dirname, 'dist'),
+    publicPath: '/',
+    filename: 'scripts_bundle.js',
+  },
+  ```
+
+Add following code under `output` in the webpack file
+```json
+ devServer: {
+    historyApiFallback: true,                                                     // it allows servering of `index.html` file in case the server returns error 404
+  },
+  ```
 
 ***
 

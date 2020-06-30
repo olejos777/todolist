@@ -7,7 +7,11 @@ const baseConfig = () => ({
   entry: './src/index.js',                                                        // all the files are imported to this file
   output: {                                                                       // localization of production version
     path: path.join(__dirname, 'dist'),
+    publicPath: '/',                                                              // additionall configuration for React Router
     filename: 'scripts_bundle.js',
+  },
+  devServer: {
+    historyApiFallback: true,                                                     // it allows servering of `index.html` file in case the server returns error 404
   },
   module: {
     rules: [
