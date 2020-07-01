@@ -24,4 +24,8 @@
       background: darken($color-warning, 5%);
     }
   }
+
+  &.round {
+    border-radius: 100%;
+  }
 }

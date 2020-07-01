@@ -5,6 +5,7 @@ import { NavLink, Link } from 'react-router-dom';
 import Container from '../Container/Container';
 import { settings } from '../../data/dataStore';
 import Icon from '../Icon/Icon';
+import Search from '../Search/Search';
 
 class Header extends React.Component {
   static propTypes = {
@@ -15,6 +16,7 @@ class Header extends React.Component {
     return (
       <header className={styles.component}>
         <Container>
+          <Search />
           <div className={styles.wrapper}>
             <Link className={styles.logo} to='/'>
               <Icon name={settings.header.icon} />

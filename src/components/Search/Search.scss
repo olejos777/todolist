@@ -1,16 +1,32 @@
 @import '../../styles/settings.scss';
 
-.component {
+.sticky {
+  position: fixed;
+  z-index: 99;
   width: 100%;
-  display: flex;
+  top: 50px;
+  left: 0px;
+  background: lighten($color-dark, 100%);
 
-  input {
-    // flex-grow: 1;
-    background: $color-light;
-    border: 1px solid lighten($color-dark, 60%);
-    padding: $base-size ($base-size * 1.5);
-    margin: 0 0 $base-size 0;
-    font-family: $font-text;
-    border-radius: $radius;
+  .component {
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+    input {
+      flex-grow: 0.5;
+      background: $color-light;
+      border: 1px solid lighten($color-dark, 40%);
+      box-shadow: 0px 0px 20px lighten($color-dark, 40%);
+      padding: $base-size ($base-size * 1.5);
+      margin: 0 0 $base-size 0;
+      font-family: $font-text;
+      border-radius: $radius;
+      &:focus {
+        box-shadow: 0px 0px 20px lighten($color-dark, 10%);
+      }
+    }
   }
 }
