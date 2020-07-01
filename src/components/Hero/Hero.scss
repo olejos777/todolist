@@ -11,12 +11,13 @@
 
 .title {
   position: absolute;
+  text-shadow: 2px 2px 5px $color-light;
   z-index: 2;
   left: 50%;
   top: 50%;
-  font-size: ($base-size * 2.5);
+  font-size: ($base-size * 3);
   text-transform: uppercase;
-  color: darken($color-light, 50%);
+  color: darken($color-light, 80%);
   transform: translate(-50%,-50%);
 }
 
@@ -27,4 +28,5 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  box-shadow: 10px 10px 7px $color-light;
 }

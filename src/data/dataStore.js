@@ -20,7 +20,7 @@ export const settings = {
 
 
 export const pageContents = {
-  title: 'My first React app',
+  title: 'To Do list',
   subtitle: 'A simple to-do app, with lists, columns and cards',
   titleFaq: 'Frequently Asked Questions',
   titleInfo: 'Info about the page',
@@ -35,7 +35,7 @@ export const listData = {
   columns: [
     {
       key: 0,
-      title: 'Books',
+      title: 'Requested (to be planned)',
       icon: 'book',
       cards: [
         {
@@ -50,7 +50,7 @@ export const listData = {
     },
     {
       key: 1,
-      title: 'Movies',
+      title: 'In Progress',
       icon: 'film',
       cards: [
         {
@@ -65,7 +65,7 @@ export const listData = {
     },
     {
       key: 2,
-      title: 'Games',
+      title: 'Done',
       icon: 'gamepad',
       cards: [
         {
@@ -84,6 +84,12 @@ export const listData = {
 const lists = [
   {
     id: 'list-1',
+    title: 'Kanban board',
+    description: 'Important actions to do',
+    imageList: 'https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+  },
+  {
+    id: 'list-2',
     title: 'Things to do <sup>soon!</sup>',
     description: 'Interesting things I want to check out now!',
     imageList: 'http://uploads.kodilla.com/bootcamp/fer/11.react/space.png',
@@ -94,19 +100,19 @@ const columns = [
   {
     id: 'column-1',
     listId: 'list-1',
-    title: 'Books',
-    icon: 'book',
+    title: 'Requested',
+    icon: 'tasks',
   },
   {
     id: 'column-2',
     listId: 'list-1',
-    title: 'Movies',
-    icon: 'film',
+    title: 'In Progress',
+    icon: 'people-carry',
   },
   {
     id: 'column-3',
     listId: 'list-1',
-    title: 'Games',
+    title: 'Done',
     icon: 'gamepad',
   },
   {
@@ -121,79 +127,79 @@ const cards = [
   {
     id: 'card-1',
     columnId: 'column-1',
-    title: 'This Is Going to Hurt',
+    title: 'Cook the dinner',
     index: 0,
   },
   {
     id: 'card-2',
     columnId: 'column-1',
-    title: 'Interpreter of Maladies',
+    title: 'Do shopping',
     index: 1,
   },
   {
     id: 'card-3',
     columnId: 'column-1',
-    title: 'Harry Potter',
+    title: 'Complete kodilla task',
     index: 2,
   },
   {
     id: 'card-4',
     columnId: 'column-1',
-    title: 'Star Wars',
+    title: 'Watch a movie',
     index: 3,
   },
   {
     id: 'card-5',
     columnId: 'column-2',
-    title: 'The Witcher',
+    title: 'Visit a doctor',
     index: 0,
   },
   {
     id: 'card-6',
-    columnId: 'column-2',
+    columnId: 'Visit mom',
     title: 'Skyrim',
     index: 1,
   },
   {
     id: 'card-7',
     columnId: 'column-2',
-    title: 'GTA V',
+    title: 'Prepare a pizza',
     index: 2,
   },
   {
     id: 'card-8',
     columnId: 'column-2',
-    title: 'FIFA 20',
+    title: 'Repair a car',
     index: 3,
   },
   {
     id: 'card-9',
     columnId: 'column-3',
-    title: 'Jak zostałem Gangsterem',
+    title: 'Do some coding',
     index: 0,
   },
   {
     id: 'card-10',
     columnId: 'column-3',
-    title: 'Pitbull',
+    title: 'Drink a beer',
     index: 1,
   },
   {
     id: 'card-11',
     columnId: 'column-3',
-    title: 'Czysty kod',
+    title: 'Go sleep',
     index: 2,
   },
   {
     id: 'card-12',
     columnId: 'column-3',
-    title: 'Cel II: to nie przypadek',
+    title: 'Read a book',
     index: 3,
   },
   {
     id: 'card-13',
     columnId: 'column-3',
-    title: 'The Witcher',
+    title: 'Play a game',
     index: 4,
   },
 ];
